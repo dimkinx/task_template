@@ -1,8 +1,17 @@
 // https://jestjs.io/ru/
 
 /* eslint-disable no-undef */
-import findAverage from './task';
+import task from './task';
 
-test('task', () => {
-  expect(findAverage([1, 1, 1])).toBe(1);
+describe('Task', () => {
+  it('01 test case', () => {
+    expect(task(['1:0', '2:0', '3:0', '4:0', '2:1', '3:1', '4:1', '3:2', '4:2', '4:3'])).toBe(30);
+  });
+  it('02 test case', () => {
+    expect(task(['1:1', '2:2', '3:3', '4:4', '2:2', '3:3', '4:4', '3:3', '4:4', '4:4'])).toBe(10);
+    expect(task(['0:1', '0:2', '0:3', '0:4', '1:2', '1:3', '1:4', '2:3', '2:4', '3:4'])).toBe(0);
+  });
+  it('03 test case', () => {
+    expect(task(['0:1', '0:2', '0:3', '0:4', '1:2', '1:3', '1:4', '2:3', '2:4', '3:4'])).toBe(0);
+  });
 });
