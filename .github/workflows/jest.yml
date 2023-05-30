@@ -1,0 +1,26 @@
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches: ["*"]
+
+name: Jest
+jobs:
+  check:
+    name: Test task
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "18"
+
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run test
+        run: npm test

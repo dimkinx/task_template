@@ -1,6 +1,3 @@
-// https://jestjs.io/ru/
-
-/* eslint-disable no-undef */
 import task from './task';
 
 describe('Task', () => {
